@@ -2,16 +2,30 @@
 cls
 :menu
 cls
+color 0
+echo 3
+echo 2
+echo 1...
+echo Iniciado com sucesso !!
+echo Version 1.00.0.0  
 date /t
 
-echo                                =========================================
-echo                                * 1. Desligar a maquina em 30 minutos    +
-echo                                * 2. Desligar a maquina em 1 hora        +
-echo                                * 3. Desligar a maquina em 2 horas       +
-echo                                * 4. Desligar a maquina em 3 horas       +
-echo                                * 5. Desligar a maquina em 4 horas       +	
-echo                                * 6. Voltar para o menu principal        +
-echo                                =========================================
+echo Computador: %computername%        Usuario: %username%
+                   
+echo                                           	        MOD MENU GUI
+echo                     =============================================================================
+echo                    * 1.  Esvaziar a Lixeira                                                      +
+echo                    * 2.  Escanear Disco Local(Executar o Mod Menu Gui como Administrador)        +
+echo                    * 3.  Painel de Controle                                                      +
+echo                    * 4.  Iniciar o Google Chrome(se tiver instalado na maquina)                  +
+echo                    * 5.  Iniciar o Microsoft Edge(se tiver instalado na maquina)                 +
+echo                    * 6.  Iniciar o Outlook(se tiver instalado na maquina)                        +
+echo                    * 7.  Iniciar o Word(se tiver instalado na maquina)                           +
+echo                    * 8.  Agendar um desligamento(Não funciona quando executa como Administrador)+
+echo                    * 9.  Iniciar o Brave(se tiver instalado na maquina)                          +
+echo                    * 10. Iniciar o Excel(se tiver instalado na maquina)                          +
+echo                    * 0.  Sair                                                                    +
+echo                     =============================================================================
 
 set /p opcao= Escolha uma opcao: 
 echo ------------------------------
@@ -20,34 +34,66 @@ if %opcao% equ 2 goto opcao2
 if %opcao% equ 3 goto opcao3
 if %opcao% equ 4 goto opcao4
 if %opcao% equ 5 goto opcao5
-if %opcao% GEQ 6 goto opcao6
+if %opcao% equ 6 goto opcao6
+if %opcao% equ 7 goto opcao7
+if %opcao% equ 8 goto opcao8
+if %opcao% equ 9 goto opcao9
+if %opcao% equ 10 goto opcao10
+if %opcao% GEQ 0 goto opcao0
 
 :opcao1
-shutdown -s -t 1800
+cls
+rd /S /Q c:\$Recycle.bin
+echo ===================================
+echo *      Lixeira Esvaziada          *
+echo ===================================
+pause
 goto menu
-echo Desligamento agendado com sucesso.
 
 :opcao2
-shutdown -s -t 3600
+cls
+echo ===================================
+echo *     Escaneamento de disco       *
+echo ===================================
+chkdsk c:
+pause
 goto menu
-echo Desligamento agendado com sucesso.
 
 :opcao3
-shutdown -s -t 7200
+cls
+control.exe
+pause
 goto menu
-echo Desligamento agendado com sucesso.
 
 :opcao4
-shutdown -s -t 10800
+start chrome.exe
 goto menu
-echo Desligamento agendado com sucesso.
 
 :opcao5
-shutdown -s -t 14400
+start msedge.exe
 goto menu
-echo Desligamento agendado com sucesso.
 
 :opcao6
-start modMenuGui.bat
-exit
+start OUTLOOK.exe
 goto menu
+
+:opcao7
+start WINWORD.exe
+goto menu
+
+:opcao8
+start mensagem.bat
+exit
+
+:opcao9
+start brave.exe
+pause
+go to menu
+
+:opcao10
+start EXCEL.exe
+goto menu
+
+:opcao0
+cls
+exit
