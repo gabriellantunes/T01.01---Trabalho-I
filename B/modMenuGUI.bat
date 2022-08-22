@@ -10,7 +10,7 @@ echo Iniciado com sucesso !!
 echo Version 1.00.0.0  
 date /t
 
-echo Computador: %computername%        Usuario: %username%
+echo Máquina: %computername%        Nome do usuario: %username%
                    
 echo                                           	        MOD MENU GUI
 echo                     =============================================================================
