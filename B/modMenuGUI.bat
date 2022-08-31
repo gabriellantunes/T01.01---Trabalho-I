@@ -21,7 +21,7 @@ echo                    * 4.  Iniciar o Google Chrome(se tiver instalado na maqu
 echo                    * 5.  Iniciar o Microsoft Edge(se tiver instalado na maquina)                 +
 echo                    * 6.  Iniciar o Outlook(se tiver instalado na maquina)                        +
 echo                    * 7.  Iniciar o Word(se tiver instalado na maquina)                           +
-echo                    * 8.  Agendar um desligamento(Não funciona quando executa como Administrador)+
+echo                    * 8.  Agendar um desligamento(Não funciona quando executa como Administrador) +
 echo                    * 9.  Iniciar o Brave(se tiver instalado na maquina)                          +
 echo                    * 10. Iniciar o Excel(se tiver instalado na maquina)                          +
 echo                    * 0.  Sair                                                                    +
